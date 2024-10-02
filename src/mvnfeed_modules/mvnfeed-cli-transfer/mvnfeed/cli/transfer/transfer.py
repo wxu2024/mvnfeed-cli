@@ -221,36 +221,6 @@ def _java_artifacts(artifact_fullname, artifact_type, artifact_path, transfer_de
             'name': artifact_fullname + '.module',
             'path': artifact_path,
             'target': False
-        },
-        {
-            'name': artifact_fullname + '.module.sha256',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.module.sha512',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.pom.sha256',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.pom.sha512',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.jar.sha512',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.jar.sha256',
-            'path': artifact_path,
-            'target': False
         }
     ]
 
@@ -267,16 +237,6 @@ def _untyped_artifacts(artifact_fullname, artifact_type, artifact_path, transfer
             'name': artifact_fullname + '.pom',
             'path': artifact_path,
             'transfer_deps': transfer_deps,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.pom.sha256',
-            'path': artifact_path,
-            'target': False
-        },
-        {
-            'name': artifact_fullname + '.pom.sha512',
-            'path': artifact_path,
             'target': False
         }
     ]
