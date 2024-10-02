@@ -248,7 +248,7 @@ def _java_artifacts(artifact_fullname, artifact_type, artifact_path, transfer_de
             'target': False
         },
         {
-            'name': artifact_fullname + '.pom.sha256',
+            'name': artifact_fullname + '.jar.sha256',
             'path': artifact_path,
             'target': False
         }
@@ -267,6 +267,16 @@ def _untyped_artifacts(artifact_fullname, artifact_type, artifact_path, transfer
             'name': artifact_fullname + '.pom',
             'path': artifact_path,
             'transfer_deps': transfer_deps,
+            'target': False
+        },
+        {
+            'name': artifact_fullname + '.pom.sha256',
+            'path': artifact_path,
+            'target': False
+        },
+        {
+            'name': artifact_fullname + '.pom.sha512',
+            'path': artifact_path,
             'target': False
         }
     ]
@@ -354,7 +364,7 @@ def _upload_file(to_repository, path, filename):
 
     try:
         with open(filename, 'rb') as file:
-            response = requests.put(url, files={filename: file}, headers=headers)
+            response = requests.put(url, data=file.read(), headers=headers)
             if not response.ok:
                 logging.error('error while uploading of %s: %s', path, response.text)
         return True
