@@ -216,7 +216,7 @@ def _java_artifacts(artifact_fullname, artifact_type, artifact_path, transfer_de
             'name': artifact_fullname + '-javadoc.jar',
             'path': artifact_path,
             'target': False
-        }},
+        },
         {
             'name': artifact_fullname + '.module',
             'path': artifact_path,
