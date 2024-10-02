@@ -148,7 +148,8 @@ def _transfer_single_artifact(name, from_repository, to_repository, stage_dir, t
                 continue
 
             logging.debug("Downloading children")
-            for dependencyNode in dependenciesNode.getchildren():
+            #for dependencyNode in dependenciesNode.getchildren():
+            for dependencyNode in list(dependenciesNode):
                 dep_group_id = _findNodeValue(dependencyNode, 'groupId')
                 dep_artifact_id = _findNodeValue(dependencyNode, 'artifactId')
                 dep_version = _findNodeValue(dependencyNode, 'version')
